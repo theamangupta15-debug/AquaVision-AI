@@ -79,8 +79,10 @@ export class LLMProvider {
     }
 
     const healthTool = toolResults.find((t) => t.toolName === 'search_official_guidance');
-    if (healthTool && healthTool.result) {
+    if (healthTool && Array.isArray(healthTool.result) && healthTool.result.length > 0) {
       sections.push(`\n**Public Health Guidance:**\n${healthTool.result.map(h => `• **${h.title}**: ${h.chemicalVsBoilingNote || h.prevention}`).join('\n')}`);
+    } else if (/boil/i.test(prompt)) {
+      sections.push('\n**Public Health Guidance:** Boiling destroys microbial pathogens but cannot remove chemical contaminants such as fluoride, nitrate, or arsenic.');
     }
 
     return sections.length > 0 ? sections.join('\n\n') : "I have checked our records, but there is insufficient data to answer this specific inquiry.";

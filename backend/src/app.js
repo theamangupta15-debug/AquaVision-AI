@@ -26,7 +26,7 @@ function isAllowedOrigin(origin) {
     : [];
 
   const defaultProductionOrigins = [
-    'https://jal-sense-india.vercel.app',
+    'https://aquavision-project.vercel.app',
     'http://localhost:5173',
     'http://localhost:3000'
   ];

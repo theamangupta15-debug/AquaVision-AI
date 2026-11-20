@@ -1,28 +1,33 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import request from 'supertest';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import app from '../src/app.js';
 import Location from '../src/models/Location.js';
+import WaterQualitySample from '../src/models/WaterQualitySample.js';
 
-dotenv.config();
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/jalsense_nagpur';
+const MONGO_URI = process.env.TEST_MONGODB_URI || 'mongodb://127.0.0.1:27017/jalsense_nagpur_test';
 
 beforeAll(async () => {
   if (mongoose.connection.readyState === 0) {
     try {
       await mongoose.connect(MONGO_URI, { serverSelectionTimeoutMS: 2000 });
+      await Location.updateOne(
+        { locationId: 'LOC-MH-NAG' },
+        { $set: { locationId: 'LOC-MH-NAG', name: 'Nagpur District', slug: 'nagpur-district', level: 'district' } },
+        { upsert: true }
+      );
       // Fixture: Seed an existing Taluka and an empty Taluka
       await Location.updateOne(
         { locationId: 'LOC-MH-NAG-TAL-KAT' },
-        { $set: { locationId: 'LOC-MH-NAG-TAL-KAT', name: 'Katol', level: 'taluka', parentId: 'LOC-MH-NAG' } },
+        { $set: { locationId: 'LOC-MH-NAG-TAL-KAT', name: 'Katol', slug: 'katol', level: 'taluka', parentId: 'LOC-MH-NAG' } },
         { upsert: true }
       );
       await Location.updateOne(
         { locationId: 'LOC-MH-NAG-TAL-BHI' },
-        { $set: { locationId: 'LOC-MH-NAG-TAL-BHI', name: 'Bhivapur', level: 'taluka', parentId: 'LOC-MH-NAG' } },
+        { $set: { locationId: 'LOC-MH-NAG-TAL-BHI', name: 'Bhivapur', slug: 'bhivapur', level: 'taluka', parentId: 'LOC-MH-NAG' } },
         { upsert: true }
       );
+      await WaterQualitySample.deleteMany({ locationId: 'LOC-MH-NAG-TAL-BHI' });
     } catch {
       console.warn('[E2E Hook] Database connection fallback.');
     }

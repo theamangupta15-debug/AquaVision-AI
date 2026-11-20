@@ -1,12 +1,9 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import request from 'supertest';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import app from '../src/app.js';
 
-dotenv.config();
-
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/jalsense_nagpur';
+const MONGO_URI = process.env.TEST_MONGODB_URI || 'mongodb://127.0.0.1:27017/jalsense_nagpur_test';
 
 beforeAll(async () => {
   if (mongoose.connection.readyState === 0) {
@@ -28,12 +25,12 @@ describe('Phase 3 Backend API Tests', () => {
   it('handles CORS preflight requests for the production frontend', async () => {
     const res = await request(app)
       .options('/api/v1/health')
-      .set('Origin', 'https://jal-sense-india.vercel.app')
+      .set('Origin', 'https://aquavision-project.vercel.app')
       .set('Access-Control-Request-Method', 'PATCH')
       .set('Access-Control-Request-Headers', 'authorization,content-type');
 
     expect(res.status).toBe(200);
-    expect(res.headers['access-control-allow-origin']).toBe('https://jal-sense-india.vercel.app');
+    expect(res.headers['access-control-allow-origin']).toBe('https://aquavision-project.vercel.app');
     expect(res.headers['access-control-allow-credentials']).toBe('true');
     expect(res.headers['access-control-allow-methods']).toContain('PATCH');
     expect(res.headers['access-control-allow-headers']).toContain('Authorization');

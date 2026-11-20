@@ -36,10 +36,17 @@ export default function Home() {
 
     fetch(apiUrl(`/api/v1/locations/${encodeURIComponent(selectedId)}/intelligence`))
       .then((res) => {
+        if (res.status === 404) {
+          setIntel(null);
+          setFetchError('The backend is online, but no records are configured for this location. Please contact the administrator.');
+          setLoading(false);
+          return null;
+        }
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
       })
       .then((json) => {
+        if (!json) return;
         if (json && json.success) {
           setIntel(json.data);
         } else {

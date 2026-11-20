@@ -1,14 +1,11 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import { AgentOrchestrator } from '../src/ai/agent/orchestrator.js';
 import { SafetyGuardrails } from '../src/ai/safety/guardrails.js';
 import { TOOL_REGISTRY } from '../src/ai/tools/toolRegistry.js';
 import Location from '../src/models/Location.js';
 
-dotenv.config();
-
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/jalsense_nagpur';
+const MONGO_URI = process.env.TEST_MONGODB_URI || 'mongodb://127.0.0.1:27017/jalsense_nagpur_test';
 
 beforeAll(async () => {
   if (mongoose.connection.readyState === 0) {
@@ -21,6 +18,7 @@ beforeAll(async () => {
           $set: {
             locationId: 'LOC-MH-NAG-TAL-KAT',
             name: 'Katol',
+            slug: 'katol',
             level: 'taluka',
             parentId: 'LOC-MH-NAG',
             aliases: ['Katol']
