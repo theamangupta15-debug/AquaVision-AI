@@ -38,7 +38,10 @@ export default function Home() {
       .then((res) => {
         if (res.status === 404) {
           setIntel(null);
-          setFetchError('The backend is online, but no records are configured for this location. Please contact the administrator.');
+          setFetchError({
+            message: 'The backend is online, but no records are configured for this location.',
+            detail: 'Location reference data must be initialized by the administrator.'
+          });
           setLoading(false);
           return null;
         }
@@ -55,7 +58,10 @@ export default function Home() {
         setLoading(false);
       })
       .catch(() => {
-        setFetchError('Backend service unreachable or database offline.');
+        setFetchError({
+          message: 'Backend service unreachable or database offline.',
+          detail: 'Check the backend service status and database connection.'
+        });
         setLoading(false);
       });
   }, [selectedId]);
@@ -124,8 +130,8 @@ export default function Home() {
         <div className="state-card state-error">
           <span className="error-icon">⚠️</span>
           <div>
-            <strong>Service Notice:</strong> {fetchError}
-            <div className="error-sub">Check the backend service status and database connection.</div>
+            <strong>Service Notice:</strong> {fetchError.message}
+            <div className="error-sub">{fetchError.detail}</div>
           </div>
         </div>
       )}

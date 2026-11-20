@@ -61,6 +61,8 @@ The frontend resolves its backend URL from `VITE_API_BASE_URL`, then the legacy 
 
 On Render, configure `NODE_ENV=production`, `MONGODB_URI`, and `ALLOWED_ORIGINS=https://aquavision-project.vercel.app`. `PORT` is supplied by Render. Production startup requires `MONGODB_URI`; it will not silently connect to a local database.
 
+To initialize location, standard, source, and health-guidance reference records, run `cd backend && npm run seed:reference` in the Render Shell. This command is safe to rerun and does not create, replace, or delete groundwater or water-quality measurements. Do not use `npm run seed` for this setup; that command resets measurement collections and loads demo readings.
+
 Getting Started
 1. Clone & Install
 

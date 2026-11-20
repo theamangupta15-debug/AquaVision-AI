@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
+    "seed:reference": "node src/seed/seedReferenceData.js",
     "seed": "node src/seed/seeder.js",
     "seed:drop": "node src/seed/seeder.js --drop",
     "test": "vitest run"
