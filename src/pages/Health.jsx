@@ -143,7 +143,7 @@ export default function HealthPage() {
       >
         <span style={{ fontSize: '1.2rem' }}>ℹ️</span>
         <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: '1.5' }}>
-          <strong>Medical Notice:</strong> Jal Sense India provides verified civic monitoring data and accredited health guidelines from WHO, MoHFW, and BIS IS 10500 standards. This reference platform cannot replace certified clinical diagnosis. If you or a family member experience persistent abdominal pain, severe dehydration, or fever, please contact an accredited medical practitioner immediately.
+          <strong>Medical Notice:</strong> AquaVision AI provides verified civic monitoring data and accredited health guidelines from WHO, MoHFW, and BIS IS 10500 standards. This reference platform cannot replace certified clinical diagnosis. If you or a family member experience persistent abdominal pain, severe dehydration, or fever, please contact an accredited medical practitioner immediately.
         </p>
       </div>
 

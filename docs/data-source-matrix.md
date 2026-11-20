@@ -1,4 +1,4 @@
-# Jal Sense India — Data Source Availability Matrix
+# AquaVision AI — Data Source Availability Matrix
 *Last Audited: November 2026 | Pilot Region: Nagpur, Maharashtra*
 
 | Source Name | Category | Access Method | Geographic Coverage | Finest Granularity | Observation Period | Update Frequency | Status | Limitations & Evidence |

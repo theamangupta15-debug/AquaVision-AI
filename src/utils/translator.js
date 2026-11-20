@@ -1,6 +1,6 @@
 export const FULL_DICTIONARY = {
   // Navigation & Core Labels
-  'Jal Sense India': { hi: 'जल सेन्स इंडिया', mr: 'जल सेन्स भारत' },
+  'AquaVision AI': { hi: 'एक्वाविजन AI', mr: 'एक्वाव्हिजन AI' },
   'Explore': { hi: 'तालुका', mr: 'तालुका' },
   'Map': { hi: 'मानचित्र', mr: 'नकाशा' },
   'Health': { hi: 'स्वास्थ्य', mr: 'आरोग्य' },

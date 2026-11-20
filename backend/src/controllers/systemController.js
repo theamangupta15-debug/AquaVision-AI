@@ -48,12 +48,12 @@ export async function assistantChatPlaceholder(req, res) {
   const { message = '' } = req.body;
   const lower = message.toLowerCase();
 
-  let reply = 'JalRakshak Assistant: In Phase 3 backend mode, responses are verified against BIS IS 10500 standards and CGWB/NMC records. Complex RAG agent pipelines will be connected in Phase 6.';
+  let reply = 'AquaVision AI Assistant: In Phase 3 backend mode, responses are verified against BIS IS 10500 standards and CGWB/NMC records. Complex RAG agent pipelines will be connected in Phase 6.';
   
   if (lower.includes('boil')) {
     reply = 'Notice: Boiling destroys microbiological pathogens (e.g. E. coli, Cholera), but CANNOT remove dissolved chemical contaminants like Fluoride, Nitrate, or Arsenic.';
   } else if (lower.includes('safe')) {
-    reply = 'Notice: Under Phase 1 research findings, no public laboratory water quality reports are published for Nagpur city localities. JalRakshak will never label water as safe without certified laboratory measurements.';
+    reply = 'Notice: Under Phase 1 research findings, no public laboratory water quality reports are published for Nagpur city localities. AquaVision AI will never label water as safe without certified laboratory measurements.';
   }
 
   res.json(formatEnvelope({ reply }, {

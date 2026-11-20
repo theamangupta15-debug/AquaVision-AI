@@ -1,11 +1,11 @@
-# 💧 Jal Sense India (Nagpur Pilot)
+# 💧 AquaVision AI (Nagpur Pilot)
 > **Open Civic Water Intelligence, Aquifer Transparency & Municipal Accountability Platform**
 
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
 [![Ollama](https://img.shields.io/badge/Local_LLM-Ollama_(llama3.2:1b)-000000?style=flat&logo=ollama&logoColor=white)](https://ollama.com/)
 
-Jal Sense India is an open-source civic technology platform developed to bridge the critical gap between official environmental datasets and citizen accessibility. Focusing on Nagpur District across 16 administrative sub-units, the platform organizes statutory public data streams—hydrogeological observations, drinking water standards, and regional reservoir levels—into an intuitive digital interface.
+AquaVision AI is an open-source civic technology platform developed to bridge the critical gap between official environmental datasets and citizen accessibility. Focusing on Nagpur District across 16 administrative sub-units, the platform organizes statutory public data streams—hydrogeological observations, drinking water standards, and regional reservoir levels—into an intuitive digital interface.
 
 ---
 
@@ -44,7 +44,7 @@ In many administrative divisions, critical water metrics remain locked inside qu
 ## 📂 Project Structure
 
 ```text
-jal-sense-india/
+aquavision-ai/
 ├── docs/screenshots/           # Platform interface captures
 ├── src/
 │   ├── assets/                 # Icons and static graphics
@@ -87,6 +87,6 @@ OLLAMA_ORIGINS="http://localhost:5173" ollama serve
 Bash
 npm run dev
 ⚖️ Civic & Medical Disclaimers
-No Clinical Advice: Jal Sense India does not provide clinical diagnoses. In case of waterborne infections, report to the nearest Primary Health Centre (PHC).
+No Clinical Advice: AquaVision AI does not provide clinical diagnoses. In case of waterborne infections, report to the nearest Primary Health Centre (PHC).
 
 Absence of Lab Data: Absence of municipal laboratory sample data does not certify that water is pure or safe for consumption.

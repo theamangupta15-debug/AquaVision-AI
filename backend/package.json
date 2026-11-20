@@ -1,5 +1,5 @@
 {
-  "name": "jal-sense-backend",
+  "name": "aquavision-ai-backend",
   "version": "1.0.0",
   "type": "module",
   "main": "src/server.js",

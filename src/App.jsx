@@ -19,7 +19,7 @@ import { FULL_DICTIONARY } from './utils/translator.js';
 
 export function usePageTitle(t) {
   useEffect(() => {
-    document.title = `${t} · Jal Sense India`;
+    document.title = `${t} · AquaVision AI`;
   }, [t]);
 }
 
@@ -51,7 +51,7 @@ function MainHeader() {
           <span className="brand-badge-circle">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
           </span>
-          <span className="brand-text">{t('Jal Sense India')}</span>
+          <span className="brand-text">{t('AquaVision AI')}</span>
         </Link>
 
         <button
@@ -190,10 +190,10 @@ function AppContent() {
 
       <footer className="site-foot wrap">
         {language === 'mr'
-          ? 'जल सेन्स भारत सार्वजनिक शासकीय नोंदी दर्शवतो. हे पाणी पिण्यायोग्य असल्याचे प्रमाणपत्र देत नाही.'
+          ? 'एक्वाव्हिजन AI सार्वजनिक शासकीय नोंदी दर्शवते. हे पाणी पिण्यायोग्य असल्याचे प्रमाणपत्र देत नाही.'
           : language === 'hi'
-          ? 'जल सेन्स इंडिया सार्वजनिक शासकीय डेटा प्रदर्शित करता है। यह किसी भी पानी को सुरक्षित प्रमाणित नहीं करता।'
-          : 'Jal Sense India displays verified public records. It does not certify any water as safe and does not diagnose illness.'}
+          ? 'एक्वाविजन AI सार्वजनिक शासकीय डेटा प्रदर्शित करता है। यह किसी भी पानी को सुरक्षित प्रमाणित नहीं करता।'
+          : 'AquaVision AI displays verified public records. It does not certify any water as safe and does not diagnose illness.'}
       </footer>
     </>
   );

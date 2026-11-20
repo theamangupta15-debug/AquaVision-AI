@@ -13,7 +13,7 @@ const INITIAL_MESSAGES = [
   {
     id: 1,
     sender: 'assistant',
-    text: "Namaskar! I am the Jal Sense India Water Safety Assistant. I am grounded in Central Ground Water Board (CGWB) observations, Bureau of Indian Standards (BIS IS 10500:2012) benchmarks, and accredited public health advisories for Nagpur District. How can I assist you with your water safety questions today?",
+    text: "Namaskar! I am the AquaVision AI Water Safety Assistant. I am grounded in Central Ground Water Board (CGWB) observations, Bureau of Indian Standards (BIS IS 10500:2012) benchmarks, and accredited public health advisories for Nagpur District. How can I assist you with your water safety questions today?",
     sources: [
       { name: "CGWB National Hydrograph Network", url: "https://cgwb.gov.in" },
       { name: "BIS IS 10500:2012 Specification", url: "https://www.bis.gov.in" }
@@ -74,7 +74,7 @@ export default function AssistantPage() {
         timestamp: 'Just now'
       };
 
-      const systemPrompt = `You are the Jal Sense AI Civic Water Assistant for Nagpur District, Maharashtra.
+      const systemPrompt = `You are the AquaVision AI Civic Water Assistant for Nagpur District, Maharashtra.
 Strict civic and health guardrails:
 1. THERMAL HONESTY: Boiling water vigorously only destroys biological pathogens. Boiling CANNOT remove chemical pollutants, Fluoride, Nitrate, or high TDS. Boiling actually concentrates chemical salts via evaporation.
 2. BIS IS 10500:2012 BENCHMARKS: TDS acceptable limit 500 mg/L (permissible 2000 mg/L); Fluoride acceptable 1.0 mg/L (max 1.5 mg/L); Nitrate cap 45 mg/L; pH 6.5 - 8.5.
@@ -214,10 +214,10 @@ Keep responses concise, objective, and citizen-friendly.`;
                   fontSize: '0.85rem'
                 }}
               >
-                JS
+                AV
               </div>
               <div>
-                <strong style={{ fontSize: '0.92rem', color: '#0f172a', display: 'block' }}>Jal Sense Assistant</strong>
+                <strong style={{ fontSize: '0.92rem', color: '#0f172a', display: 'block' }}>AquaVision Assistant</strong>
                 <span style={{ fontSize: '0.74rem', color: '#16a34a', display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#16a34a' }}></span>
                   Grounded Corpus Active (Nagpur)
@@ -388,7 +388,7 @@ Keep responses concise, objective, and citizen-friendly.`;
               Grounding Verification
             </h3>
             <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: '1.5', margin: '0 0 14px 0' }}>
-              Jal Sense AI is hardwired with negative constraints:
+              AquaVision AI is hardwired with negative constraints:
             </p>
             <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '0.82rem', color: '#334155', display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <li><strong>Zero Speculation:</strong> Missing test data is never hallucinated as safe.</li>

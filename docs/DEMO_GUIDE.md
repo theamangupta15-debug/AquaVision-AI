@@ -1,4 +1,4 @@
-# Jal Sense India — Official 5-7 Minute Demonstration Script
+# AquaVision AI — Official 5-7 Minute Demonstration Script
 **Tagline:** Understand Your Water. Protect Your Health.
 **Pilot Location:** Nagpur, Maharashtra, India
 

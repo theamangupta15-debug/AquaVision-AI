@@ -89,7 +89,7 @@ export default function RegisterPage() {
             margin: '0 0 22px 0'
           }}
         >
-          Join Jal Sense India to submit verified grievances, receive contamination alerts, and track taluka aquifers.
+          Join AquaVision AI to submit verified grievances, receive contamination alerts, and track taluka aquifers.
         </p>
 
         {/* Role Switcher Pill */}

@@ -13,6 +13,41 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
+  const isLocalDemoEnabled =
+    import.meta.env.DEV &&
+    ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname);
+
+  const DEMO_ACCOUNTS = {
+    citizen: {
+      email: 'citizen@aquavision.demo',
+      password: 'Citizen@123',
+      displayName: 'Demo Citizen'
+    },
+    official: {
+      email: 'official@aquavision.demo',
+      password: 'Official@123',
+      displayName: 'Demo Municipal Officer'
+    }
+  };
+
+  const loginWithDemoAccount = (role) => {
+    const account = DEMO_ACCOUNTS[role];
+    setUserType(role);
+    setEmail(account.email);
+    setPassword(account.password);
+
+    setLoading(true);
+    setTimeout(() => {
+      localStorage.setItem('jalsense_user', JSON.stringify({
+        email: account.email,
+        role,
+        displayName: account.displayName
+      }));
+      setLoading(false);
+      navigate(from, { replace: true });
+      window.location.reload();
+    }, 300);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -147,6 +182,65 @@ export default function LoginPage() {
             PHED / Municipal Official
           </button>
         </div>
+
+        {isLocalDemoEnabled && (
+          <div
+            style={{
+              background: 'var(--bg-surface, #f8fafc)',
+              border: '1px solid var(--border-color, #e2e8f0)',
+              borderRadius: '10px',
+              padding: '12px',
+              marginBottom: '16px'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+              <strong style={{ fontSize: '0.82rem', color: 'var(--text-main, #334155)' }}>Local Demo Access</strong>
+              <span style={{ fontSize: '0.68rem', color: 'var(--text-muted, #64748b)' }}>Developer only</span>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+              <button
+                type="button"
+                onClick={() => loginWithDemoAccount('citizen')}
+                disabled={loading}
+                style={{
+                  padding: '9px 8px',
+                  border: '1px solid #0ea5e9',
+                  borderRadius: '8px',
+                  background: '#eff6ff',
+                  color: '#0369a1',
+                  fontSize: '0.78rem',
+                  fontWeight: '800',
+                  cursor: loading ? 'not-allowed' : 'pointer'
+                }}
+              >
+                Citizen Demo
+                <span style={{ display: 'block', fontSize: '0.66rem', fontWeight: '600', marginTop: '3px' }}>
+                  citizen@aquavision.demo
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => loginWithDemoAccount('official')}
+                disabled={loading}
+                style={{
+                  padding: '9px 8px',
+                  border: '1px solid #14b8a6',
+                  borderRadius: '8px',
+                  background: '#f0fdfa',
+                  color: '#0f766e',
+                  fontSize: '0.78rem',
+                  fontWeight: '800',
+                  cursor: loading ? 'not-allowed' : 'pointer'
+                }}
+              >
+                Official Demo
+                <span style={{ display: 'block', fontSize: '0.66rem', fontWeight: '600', marginTop: '3px' }}>
+                  official@aquavision.demo
+                </span>
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Form Body */}
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

@@ -71,7 +71,7 @@ export class AgentOrchestrator {
     }
 
     // 3. Generate Answer via LLMProvider
-    const systemInstruction = `You are the Jal Sense India Water Intelligence Assistant for Nagpur District.
+    const systemInstruction = `You are the AquaVision AI Water Intelligence Assistant for Nagpur District.
 Rules:
 1. Base all answers strictly on the provided tool results. Never invent water quality metrics or groundwater depths.
 2. If data is absent for an area, state the limitation clearly. Never label unmeasured water as "safe".

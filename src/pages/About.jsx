@@ -38,7 +38,7 @@ export default function AboutPage() {
 
     // Simulate submission to civic audit logger
     setTimeout(() => {
-      const ticketId = `JAL-AUDIT-${Math.floor(100000 + Math.random() * 900000)}`;
+      const ticketId = `AQUAVISION-AUDIT-${Math.floor(100000 + Math.random() * 900000)}`;
       setSubmittedTicket(ticketId);
       setIsSubmitting(false);
     }, 600);
@@ -64,7 +64,7 @@ export default function AboutPage() {
           <span>CIVIC PLATFORM MISSION & ACCOUNTABILITY</span>
         </div>
         <h1 style={{ fontSize: '2.4rem', fontWeight: '800', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
-          About Jal Sense India
+          About AquaVision AI
         </h1>
         <p style={{ fontSize: '1rem', color: '#64748b', margin: 0, maxWidth: '860px', lineHeight: '1.6' }}>
           A public-interest civic intelligence platform democratizing access to official hydrogeological data, drinking water benchmarks, and evidence-grounded health guidance for Nagpur District.
@@ -83,7 +83,7 @@ export default function AboutPage() {
             </h2>
             <p style={{ fontSize: '0.92rem', color: '#334155', lineHeight: '1.6', margin: '0 0 14px 0' }}>
               In many regions across India, essential water metrics remain locked inside static government gazettes, quarterly PDFs, or unlinked portals. 
-              <strong> Jal Sense India</strong> bridges this civic information gap by organizing published records from the Central Ground Water Board (CGWB) and statutory Bureau of Indian Standards (BIS IS 10500:2012) into a clear, verifiable interface.
+              <strong> AquaVision AI</strong> bridges this civic information gap by organizing published records from the Central Ground Water Board (CGWB) and statutory Bureau of Indian Standards (BIS IS 10500:2012) into a clear, verifiable interface.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '16px' }}>
               <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '12px' }}>
@@ -339,10 +339,10 @@ export default function AboutPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
           <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '18px' }}>
             <strong style={{ fontSize: '0.95rem', color: '#0f172a', display: 'block', marginBottom: '6px' }}>
-              Does Jal Sense India certify water as safe to drink?
+              Does AquaVision AI certify water as safe to drink?
             </strong>
             <p style={{ fontSize: '0.85rem', color: '#475569', lineHeight: '1.5', margin: 0 }}>
-              No. Jal Sense India synthesizes publicly documented government records and statutory benchmarks[cite: 13]. Physical pipeline variations and internal plumbing biofilms require direct point-of-use laboratory testing before declaring water potable[cite: 13].
+              No. AquaVision AI synthesizes publicly documented government records and statutory benchmarks[cite: 13]. Physical pipeline variations and internal plumbing biofilms require direct point-of-use laboratory testing before declaring water potable[cite: 13].
             </p>
           </div>
 

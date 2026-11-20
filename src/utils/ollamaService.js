@@ -1,7 +1,7 @@
 const OLLAMA_HOST = 'http://localhost:11434';
 
 // Grounded civic facts injected as system context
-const JAL_SENSE_SYSTEM_PROMPT = `You are the Jal Sense AI Civic Water Intelligence Assistant for Nagpur District, Maharashtra.
+const AQUAVISION_SYSTEM_PROMPT = `You are the AquaVision AI Civic Water Intelligence Assistant for Nagpur District, Maharashtra.
 You must adhere strictly to the following public health and hydrogeological rules:
 
 1. THERMAL HONESTY: Boiling water vigorously kills microbial pathogens (bacteria, viruses, cysts). Boiling DOES NOT remove chemical contaminants, heavy metals, Fluoride, Nitrate, or high TDS. Prolonged boiling actually increases dissolved chemical concentrations through evaporation.
@@ -21,7 +21,7 @@ Keep answers concise, objective, and citizen-friendly.`;
 
 export async function askOllama({ model = 'llama3.2', messages, onStreamChunk }) {
   const formattedMessages = [
-    { role: 'system', content: JAL_SENSE_SYSTEM_PROMPT },
+    { role: 'system', content: AQUAVISION_SYSTEM_PROMPT },
     ...messages.map((m) => ({
       role: m.sender === 'user' ? 'user' : 'assistant',
       content: m.text

@@ -84,7 +84,7 @@ const METHODOLOGY_RULES = [
   {
     rule: '02',
     title: 'Mandatory Metadata & Provenance Tracking',
-    summary: 'Every data record displayed in Jal Sense India must preserve its source agency, collection timestamp, and administrative level. Incomplete records without spatial attribution are quarantined.'
+    summary: 'Every data record displayed in AquaVision AI must preserve its source agency, collection timestamp, and administrative level. Incomplete records without spatial attribution are quarantined.'
   },
   {
     rule: '03',
@@ -113,7 +113,7 @@ export default function MethodologyPage() {
           Data Sources & Ingestion Methodology
         </h1>
         <p style={{ fontSize: '1rem', color: '#64748b', margin: 0, maxWidth: '860px', lineHeight: '1.6' }}>
-          Jal Sense India synthesizes official government datasets, statutory Bureau of Indian Standards (BIS) potable benchmarks, and hydrological field surveys for Nagpur District through an open and verifiable ingestion framework.
+          AquaVision AI synthesizes official government datasets, statutory Bureau of Indian Standards (BIS) potable benchmarks, and hydrological field surveys for Nagpur District through an open and verifiable ingestion framework.
         </p>
       </div>
 
@@ -271,7 +271,7 @@ export default function MethodologyPage() {
       >
         <span style={{ fontSize: '1.3rem' }}></span>
         <p style={{ margin: 0, fontSize: '0.84rem', color: '#92400e', lineHeight: '1.5' }}>
-          <strong>Statutory Civic Disclaimer:</strong> Jal Sense India compiles and displays verified public data for civic transparency, educational evaluation, and municipal accountability. It does not certify any tap water as safe or potable and does not provide clinical diagnoses. Point-of-use tap testing via accredited laboratories is recommended for drinking water.
+          <strong>Statutory Civic Disclaimer:</strong> AquaVision AI compiles and displays verified public data for civic transparency, educational evaluation, and municipal accountability. It does not certify any tap water as safe or potable and does not provide clinical diagnoses. Point-of-use tap testing via accredited laboratories is recommended for drinking water.
         </p>
       </div>
 
